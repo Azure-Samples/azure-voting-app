@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: azure-vote-back
-        image: microsoft/azure-vote-back:v1
+        image: mysql:latest
         args: ["--ignore-db-dir=lost+found"]
         ports:
         - containerPort: 3306
