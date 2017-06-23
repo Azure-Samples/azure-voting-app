@@ -1,7 +1,8 @@
 version: '3'
 services:
   azure-vote-back:
-    image: mysql
+    build: ./azure-vote-mysql
+    image: azure-vote-back
     container_name: azure-vote-back
     environment:
       MYSQL_USER: dbuser
