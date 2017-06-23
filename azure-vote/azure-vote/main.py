@@ -40,9 +40,6 @@ def index():
 
     if request.method == 'GET':
 
-        # Create table if needed - DB must exsist
-        cursor.execute('''CREATE TABLE IF NOT EXISTS `azurevote`.`azurevote` (`voteid` INT NOT NULL AUTO_INCREMENT,`votevalue` VARCHAR(45) NULL,PRIMARY KEY (`voteid`));''')
-
         # Get current values
         cursor.execute('''Select votevalue, count(votevalue) as count From azurevote.azurevote
         group by votevalue''')
