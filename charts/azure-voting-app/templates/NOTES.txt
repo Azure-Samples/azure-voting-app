@@ -1,4 +1,4 @@
-{{- $serviceName := include "fullname" . -}}
+{{- $serviceName := include "name" . -}}
 1. Get the Azure Voting App URL to visit by running these commands in the same shell:
 {{- if contains "NodePort" .Values.azureVoteFront.service.type }}
   export NODE_PORT=$(kubectl get --namespace {{ .Release.Namespace }} -o jsonpath="{.spec.ports[0].nodePort}" services {{ $serviceName }}-{{ .Values.azureVoteFront.service.name }})
