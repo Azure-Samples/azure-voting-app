@@ -30,7 +30,7 @@ data:
   MYSQL_HOST: YXp1cmUtdm90ZS1iYWNr
   MYSQL_ROOT_PASSWORD: UGFzc3dvcmQxMg==
 ---
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: azure-vote-back
@@ -87,7 +87,7 @@ spec:
   selector:
     app: azure-vote-back
 ---
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: azure-vote-front
@@ -97,7 +97,7 @@ spec:
     rollingUpdate:
       maxSurge: 1
       maxUnavailable: 1
-  minReadySeconds: 5 
+  minReadySeconds: 5
   template:
     metadata:
       labels:
