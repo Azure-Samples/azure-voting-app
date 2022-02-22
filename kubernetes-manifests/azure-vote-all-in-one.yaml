@@ -35,6 +35,9 @@ kind: Deployment
 metadata:
   name: azure-vote-back
 spec:
+  selector:
+    matchLabels:
+      app: azure-vote-back
   replicas: 1
   template:
     metadata:
@@ -92,6 +95,9 @@ kind: Deployment
 metadata:
   name: azure-vote-front
 spec:
+  selector:
+    matchLabels:
+      app: azure-vote-front
   replicas: 1
   strategy:
     rollingUpdate:
